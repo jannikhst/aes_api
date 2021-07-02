@@ -20,6 +20,10 @@ router.post('/aes-ecb/encrypt', (req, res, next) => {
     res.send(JSON.stringify(json));
 });
 
+router.get('/check', (req, res, next) => {
+    res.send('aes_api');
+});
+
 router.post('/aes-ecb/decrypt', (req, res, next) => {
     const key = req.body.key;
     const content = req.body.content;
