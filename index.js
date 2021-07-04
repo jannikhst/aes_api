@@ -12,8 +12,8 @@ app.use(router);
 
 
 router.post('/aes-ecb/encrypt', (req, res, next) => {
-    const key = req.body.key;
-    const content = req.body.content;
+    const key = req.body['key'];
+    const content = req.body['content'];
     const encrypted = aes.encrypt(key, content);
     const json = {};
     console.log(key);
@@ -28,8 +28,8 @@ router.get('/check', (req, res, next) => {
 });
 
 router.post('/aes-ecb/decrypt', (req, res, next) => {
-    const key = req.body.key;
-    const content = req.body.content;
+    const key = req.body['key'];
+    const content = req.body['content'];
     const decrypted = aes.decrypt(key, content);
     const json = {};
     console.log(key);
